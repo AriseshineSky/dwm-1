@@ -144,7 +144,7 @@ static Key keys[] = {
 
     { MODKEY|ShiftMask,    XK_Return,       zoom,             {0} },                     /* super shift enter  |  将当前聚焦窗口置为主窗口 */
 
-    { MODKEY,              XK_space,        togglefloating,   {0} },                     /* super space        |  开启/关闭 聚焦目标的float模式 */
+    { MODKEY,              XK_space,        setlayout,        {0} },                     /* super space        |  开启/关闭 聚焦目标的float模式 */
     { MODKEY|ShiftMask,    XK_space,        toggleallfloating,{0} },                     /* super shift space  |  开启/关闭 全部目标的float模式 */
     { MODKEY,              XK_f,            fullscreen,       {0} },                     /* super f            |  开启/关闭 全屏 */
     { MODKEY|ShiftMask,    XK_f,            togglebar,        {0} },                     /* super shift f      |  开启/关闭 状态栏 */

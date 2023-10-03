@@ -57,12 +57,12 @@ static const char *tags[] = {
     "", // tag:0  key:1  desc:terminal1
     "", // tag:1  key:2  desc:terminal2
     "", // tag:2  key:3  desc:terminal3
-    "󰕧", // tag:4  key:9  desc:obs
+    "󰕧", // tag:4  key:9  desc:robo3t
     "", // tag:5  key:c  desc:chrome
     "", // tag:6  key:m  desc:music
-    "ﬄ", // tag:7  key:0  desc:qq
-    "﬐", // tag:8  key:w  desc:wechat
-    "", // tag:9  key:l  desc:wxwork
+    "ﬄ", // tag:7  key:0  desc:telegram
+    "﬐", // tag:8  key:w  desc:beekeeper-studio
+    "", // tag:9  key:l  desc:robo3t-snap
 };
 
 /* 自定义窗口显示规则 */
@@ -181,7 +181,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,    XK_l,            exchange_client,  {.i = RIGHT } },           /* super shift l      | 二维交换窗口 (仅平铺) */
 
     /* spawn + SHCMD 执行对应命令(已下部分建议完全自己重新定义) */
-    { MODKEY,              XK_Return, spawn, SHCMD("st") },                                                     /* super enter      | 打开st终端             */
+    { MODKEY,              XK_Return, spawn, SHCMD("tabbed -n st -C tabbed -c -r 2 st -w ''") },                /* super enter      | 打开st终端             */
     { MODKEY,              XK_F1,     spawn, SHCMD("killall pcmanfm || pcmanfm") },                             /* super F1         | 打开/关闭pcmanfm       */
     { MODKEY,              XK_s,      spawn, SHCMD("rofi -show run") },                                         /* super d          | rofi: 执行run          */
     { MODKEY,              XK_p,      spawn, SHCMD("$DWM/DEF/rofi.sh") },                                       /* super p          | rofi: 执行自定义脚本   */
@@ -196,12 +196,12 @@ static Key keys[] = {
     TAGKEYS(XK_1, 0, 0)
     TAGKEYS(XK_2, 1, 0)
     TAGKEYS(XK_3, 2, 0)
-    TAGKEYS(XK_9, 3, "obs")
+    TAGKEYS(XK_r, 3, "robo3t-snap")
     TAGKEYS(XK_c, 4, "google-chrome-stable")
-    TAGKEYS(XK_m, 5, "~/scripts/music_player.sh")
-    TAGKEYS(XK_0, 6, "telegram-desktop")
-    TAGKEYS(XK_w, 7, "/opt/apps/com.qq.weixin.deepin/files/run.sh")
-    TAGKEYS(XK_y, 8, "/opt/apps/com.qq.weixin.work.deepin/files/run.sh")
+    TAGKEYS(XK_m, 5, "firfox")
+    TAGKEYS(XK_t, 6, "telegram-desktop")
+    TAGKEYS(XK_w, 7, "beekeeper-studio")
+    TAGKEYS(XK_y, 8, "robo3t-snap")
 };
 
 static Button buttons[] = {

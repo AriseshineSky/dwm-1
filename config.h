@@ -39,8 +39,8 @@ static const unsigned int alphas[][3]    = {          /* 透明度设置 ColFg, 
     [SchemeSelGlobal] = { OPAQUE, baralpha, borderalpha },
     [SchemeNormTag] = { OPAQUE, baralpha, borderalpha }, 
     [SchemeSelTag] = { OPAQUE, baralpha, borderalpha },
-    [SchemeBarEmpty] = { NULL, 0xa0a, NULL },
-    [SchemeStatusText] = { OPAQUE, 0x88, NULL },
+    [SchemeBarEmpty] = { 0, 0xa0a, 0 },
+    [SchemeStatusText] = { OPAQUE, 0x88, 0 },
 };
 
 /* 自定义脚本位置 */
@@ -57,10 +57,10 @@ static const char *tags[] = {
     "", // tag:0  key:1  desc:terminal1
     "", // tag:1  key:2  desc:terminal2
     "", // tag:2  key:3  desc:terminal3
-    "󰕧", // tag:4  key:9  desc:robo3t
-    "", // tag:5  key:c  desc:chrome
+    "󰕧", // tag:4  key:9  desc:remmina
+    "", // tag:5  key:c  desc:firefox
     "", // tag:6  key:m  desc:music
-    "ﬄ", // tag:7  key:0  desc:telegram
+    "ﬄ", // tag:7  key:t  desc:telegram
     "﬐", // tag:8  key:w  desc:beekeeper-studio
     "", // tag:9  key:l  desc:robo3t-snap
 };
@@ -196,9 +196,9 @@ static Key keys[] = {
     TAGKEYS(XK_1, 0, 0)
     TAGKEYS(XK_2, 1, 0)
     TAGKEYS(XK_3, 2, 0)
-    TAGKEYS(XK_r, 3, "robo3t-snap")
-    TAGKEYS(XK_c, 4, "google-chrome-stable")
-    TAGKEYS(XK_m, 5, "firfox")
+    TAGKEYS(XK_r, 3, "remmina")
+    TAGKEYS(XK_c, 4, "firefox")
+    TAGKEYS(XK_m, 5, "google-chrome-stable")
     TAGKEYS(XK_t, 6, "telegram-desktop")
     TAGKEYS(XK_w, 7, "beekeeper-studio")
     TAGKEYS(XK_y, 8, "robo3t-snap")

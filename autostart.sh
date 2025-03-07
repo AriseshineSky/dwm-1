@@ -3,6 +3,8 @@
 # 搭配 https://github.com/yaocccc/scripts 仓库使用 目录位置 ~/scripts
 # 部分配置文件在 ~/scripts/config 目录下
 
+/bin/bash ~/scripts/autostart.sh &
+
 _thisdir=$(cd $(dirname $0);pwd)
 
 settings() {

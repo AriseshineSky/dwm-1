@@ -2,6 +2,7 @@
 
 static int showsystray                   = 1;         /* 是否显示托盘栏 */
 static const int newclientathead         = 0;         /* 定义新窗口在栈顶还是栈底 */
+static const int managetransientwin      = 1;         /* 是否管理临时窗口 */
 static const unsigned int borderpx       = 2;         /* 窗口边框大小 */
 static const unsigned int systraypinning = 1;         /* 托盘跟随的显示器 0代表不指定显示器 */
 static const unsigned int systrayspacing = 1;         /* 托盘间距 */
@@ -106,8 +107,6 @@ static const Rule rules[] = {
     { NULL,                  NULL,                "crx_",            0,            1,          0,          0,        -1,      0}, // 错误载入时 会有crx_ 浮动
     { NULL,                  NULL,                "broken",          0,            1,          0,          0,        -1,      0}, // 错误载入时 会有broken 浮动
 };
-static const char *overviewtag = "OVERVIEW";
-static const Layout overviewlayout = { "舘",  overview };
 
 /* 自定义布局 */
 static const Layout layouts[] = {
@@ -134,7 +133,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,    XK_n,            tagtoleft,        {0} },                     /* super shift left   |  将本窗口移动到左边tag */
     { MODKEY|ShiftMask,    XK_i,            tagtoright,       {0} },                     /* super shift right  |  将本窗口移动到右边tag */
 
-    { MODKEY,              XK_a,            toggleoverview,   {0} },                     /* super a            |  显示所有tag 或 跳转到聚焦窗口的tag */
+    { MODKEY,              XK_a,            previewallwin,   {0} },                     /* super a            |  显示所有tag 或 跳转到聚焦窗口的tag */
 
     { MODKEY,              XK_comma,        setmfact,         {.f = -0.05} },            /* super ,            |  缩小主工作区 */
     { MODKEY,              XK_period,       setmfact,         {.f = +0.05} },            /* super .            |  放大主工作区 */
@@ -181,7 +180,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,    XK_l,            exchange_client,  {.i = RIGHT } },           /* super shift l      | 二维交换窗口 (仅平铺) */
 
     /* spawn + SHCMD 执行对应命令(已下部分建议完全自己重新定义) */
-    { MODKEY,              XK_Return, spawn, SHCMD("tabbed -n st -C tabbed -c -r 2 st -w ''") },                /* super enter      | 打开st终端             */
+    { MODKEY,              XK_Return, spawn, SHCMD("alacritty") },                /* super enter      | 打开alacritty终端             */
     { MODKEY,              XK_F1,     spawn, SHCMD("killall pcmanfm || pcmanfm") },                             /* super F1         | 打开/关闭pcmanfm       */
     { MODKEY,              XK_s,      spawn, SHCMD("rofi -show run") },                                         /* super d          | rofi: 执行run          */
     { MODKEY,              XK_p,      spawn, SHCMD("$DWM/DEF/rofi.sh") },                                       /* super p          | rofi: 执行自定义脚本   */
